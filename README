@@ -1,3 +1,2 @@
 1.optimizationEveryDay.pdf introduce some basic knowledge for optimizaiton, will update ...
-2. projectDoc_dongnie.pdf and projSlides.pdf introduces a first-oder primal dual algorithm which are fit for F+G, 
-where F and G are both convex. It is especially suitable for non-smooth convex problems. The code will be updated later.
+2. projectDoc_dongnie.pdf and projSlides.pdf introduces a first-oder primal dual algorithm which are fit for F+G, where F and G are both convex. It is especially suitable for non-smooth convex problems. The code will be updated later.
