@@ -13,15 +13,13 @@ beta = 0.5; % degeneration weight of step size
 [m,n] = size(A);
 x = zeros(n,1);
 x_prev = x;
-AtA = A'*A;
-Atb = A'*b;
-abs_tol = 1e-4;
+abs_tol = 1e-5;
 rel_tol = 1e-2;
 max_iter = 10000;%maximum training iterations
 
 for k = 1: max_iter
     %s1: use g's grad to update z
-    grad_x = AtA*x_prev - Atb;
+    grad_x = A'*A*x_prev - A'*b;
     z = x - t*grad_x;
     %s2: x = prox(z) with soft_threshold
     x = soft_threshold(z, t*gamma)
