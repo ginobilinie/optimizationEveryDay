@@ -3,6 +3,7 @@
 %% Algorithms:
 %% z_k = x_k - t_k*A'(Ax_k-b)
 %% x_k+1 = prox_h(z_k)
+%% Dong Nie, June, 2019
 
 function x = proxGD(A,b,gamma)
 tic;
@@ -38,21 +39,19 @@ for k = 1: max_iter
     end
 end
 
-% %=========================================
+
 % % obtain the optimal solution x and the corresponding function value: p_prox
-% %=========================================
 h.x_prox = x; % the optimal solution
 h.p_prox = h.prox_optval(end); % the corresponding function value
-% %=========================================
+
 % % display information
-% %=========================================
 h.prox_grad_toc = toc; % show running time
-fprintf('Proximal gradient time elapsed: %.2f seconds.\n', h.prox_grad_toc);
+fprintf('Elapsed time for proxGD: %.3f seconds.\n', h.prox_grad_toc);
 h.prox_iter = length(h.prox_optval);
 K = h.prox_iter;
 h.prox_optval = padarray(h.prox_optval', K-h.prox_iter, h.p_prox, 'post');
 
-plot( 1:K, h.prox_optval, 'r-');
+plot( 1:K, h.prox_optval, 'r+');
 xlim([0 75]);
 
 end 
